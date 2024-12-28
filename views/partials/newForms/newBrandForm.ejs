@@ -1,5 +1,44 @@
 <form action="/brands/new" method="post">
-    <label for="category">brand</label>
-    <input type="text" name="" id="">
+    <label for="newBrand">New Brand</label>
+    <input type="text" name="newBrand" id="">
+    <label for="newBrandCategory">Category</label>
+    <select name="newBrandCategory" id="categorySelect">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="other">Other</option>
+    </select>
+    <input type="text" name="otherCategory" placeholder="Please specify" id="otherCategoryInput" style="display: none;">
+    <label for="newBrandProd">Associated Products</label>
+    <input type="checkbox" name="newBrandProd" value="option1"> Option 1
+    <input type="checkbox" name="newBrandProd" value="option2"> Option 2
+    <input type="checkbox" name="newBrandProd" value="option3"> Option 3
+    <label>
+        <input type="checkbox" name="otherCheckbox" value="other"> Other
+    </label>
+    <input type="text" name="otherProduct" placeholder="Please specify" style="display: none;">
     <button type="submit">Submit</button>
 </form>
+
+<script>
+    const categorySelect = document.getElementById('categorySelect');
+    const otherCategoryInput = document.getElementById('otherCategoryInput');
+    const otherCheckbox = document.querySelector('input[value="other"]');
+    const otherProductInput = document.querySelector('input[name="otherProduct"]');
+
+    categorySelect.addEventListener('change', () => {
+        if (categorySelect.value === 'other') {
+            otherCategoryInput.style.display = 'block';
+        } else {
+            otherCategoryInput.style.display = 'none';
+        }
+    });
+
+    otherCheckbox.addEventListener('change', () => {
+        if (otherCheckbox.checked) {
+            otherProductInput.style.display = 'block';
+        } else {
+            otherProductInput.style.display = 'none';
+        }
+    });
+</script>

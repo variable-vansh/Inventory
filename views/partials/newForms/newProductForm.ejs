@@ -1,5 +1,49 @@
 <form action="/products/new" method="post">
-    <label for="category">product</label>
-    <input type="text" name="" id="">
+    <label for="newProduct">New Product</label>
+    <input type="text" name="newProduct" id="newProduct">
+
+    <label for="newProductBrand">Brand</label>
+    <select name="newProductBrand" id="newProductBrand">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="other">Other</option>
+    </select>
+    <input type="text" name="newProductBrandOther" placeholder="Please specify" id="newProductBrandOther"
+        style="display: none;">
+
+    <label for="newProductCategory">Category</label>
+    <select name="newProductCategory" id="newProductCategory">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="other">Other</option>
+    </select>
+    <input type="text" name="newProductCategoryOther" placeholder="Please specify" id="newProductCategoryOther"
+        style="display: none;">
+
     <button type="submit">Submit</button>
 </form>
+
+<script>
+    const newProductBrand = document.getElementById('newProductBrand');
+    const newProductBrandOther = document.getElementById('newProductBrandOther');
+    const newProductCategory = document.getElementById('newProductCategory');
+    const newProductCategoryOther = document.getElementById('newProductCategoryOther');
+
+    newProductBrand.addEventListener('change', () => {
+        if (newProductBrand.value === 'other') {
+            newProductBrandOther.style.display = 'block';
+        } else {
+            newProductBrandOther.style.display = 'none';
+        }
+    });
+
+    newProductCategory.addEventListener('change', () => {
+        if (newProductCategory.value === 'other') {
+            newProductCategoryOther.style.display = 'block';
+        } else {
+            newProductCategoryOther.style.display = 'none';
+        }
+    });
+</script>
