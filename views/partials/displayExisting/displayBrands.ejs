@@ -1,5 +1,17 @@
-<ul>
+<!-- <ul>
     <li>brand1</li>
     <li>brand2</li>
     <li>brand3</li>
+</ul> -->
+
+<ul>
+    <% for (brand of brands){ %>
+        <li>
+            Brand: <%= brand.brand_name%>
+                <br>
+                Categories: <%= brand.brand_category%>
+                <br>
+                Associated Products: <%= brand.brand_product%>
+        </li>
+        <%}%>
 </ul>

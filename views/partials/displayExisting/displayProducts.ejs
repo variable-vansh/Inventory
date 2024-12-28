@@ -1,5 +1,17 @@
-<ul>
+<!-- <ul>
     <li>product1</li>
     <li>product2</li>
     <li>product3</li>
+</ul> -->
+
+<ul>
+    <% for (product of products){ %>
+        <li>
+            Product: <%= product.product_name%>
+                <br>
+                Brand: <%= product.product_brand%>
+                    <br>
+                    Category: <%= product.product_category%>
+        </li>
+        <%}%>
 </ul>

@@ -1,33 +1,46 @@
 <form action="/brands/new" method="post">
     <label for="newBrand">New Brand</label>
     <input type="text" name="newBrand" id="">
-    <label for="newBrandCategory">Category</label>
+    <!-- <label for="newBrandCategory">Category</label>
     <select name="newBrandCategory" id="categorySelect">
         <option value="option1">Option 1</option>
         <option value="option2">Option 2</option>
         <option value="option3">Option 3</option>
         <option value="other">Other</option>
-    </select>
+    </select> -->
+
+    <label for="newBrandCategory">Category</label>
+    <input type="checkbox" name="newBrandCategory" value="option1"> Option 1
+    <input type="checkbox" name="newBrandCategory" value="option2"> Option 2
+    <input type="checkbox" name="newBrandCategory" value="option3"> Option 3
+    <label>
+        <input type="checkbox" name="otherCheckbox" value="other" id="categorySelect"> Other
+    </label>
+    <input type="text" name="otherProduct" placeholder="Please specify" style="display: none;" id="otherCategoryInput">
+
+
     <input type="text" name="otherCategory" placeholder="Please specify" id="otherCategoryInput" style="display: none;">
     <label for="newBrandProd">Associated Products</label>
     <input type="checkbox" name="newBrandProd" value="option1"> Option 1
     <input type="checkbox" name="newBrandProd" value="option2"> Option 2
     <input type="checkbox" name="newBrandProd" value="option3"> Option 3
     <label>
-        <input type="checkbox" name="otherCheckbox" value="other"> Other
+        <input type="checkbox" name="otherCheckbox" value="other" id="productSelect"> Other
     </label>
-    <input type="text" name="otherProduct" placeholder="Please specify" style="display: none;">
+    <input type="text" name="otherProduct" placeholder="Please specify" style="display: none;", id="otherProductInput">
+
     <button type="submit">Submit</button>
 </form>
 
 <script>
     const categorySelect = document.getElementById('categorySelect');
     const otherCategoryInput = document.getElementById('otherCategoryInput');
-    const otherCheckbox = document.querySelector('input[value="other"]');
-    const otherProductInput = document.querySelector('input[name="otherProduct"]');
+
+    const otherCheckbox = document.getElementById('productSelect');
+    const otherProductInput = document.getElementById('otherProductInput');
 
     categorySelect.addEventListener('change', () => {
-        if (categorySelect.value === 'other') {
+        if (categorySelect.checked ) {
             otherCategoryInput.style.display = 'block';
         } else {
             otherCategoryInput.style.display = 'none';

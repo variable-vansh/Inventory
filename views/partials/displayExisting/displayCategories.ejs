@@ -1,5 +1,17 @@
+
+<!-- 
 <ul>
     <li>category1</li>
     <li>category2</li>
     <li>category3</li>
+</ul> -->
+
+<ul>
+    <% for (category of categories){ %>
+        <li>
+            Category: <%= category.category_name%>
+                <br>
+                Associated Products: <%= category.associated_products%>
+        </li>
+        <%}%>
 </ul>

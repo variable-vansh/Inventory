@@ -12,6 +12,9 @@ baseRouter.get("/categories/new", baseController.newCategoryPage);
 baseRouter.get("/brands/new", baseController.newBrandPage);
 baseRouter.get("/products/new", baseController.newProductPage);
 
+baseRouter.post("/categories/new", baseController.createCategory);
+baseRouter.post("/brands/new", baseController.createBrand);
+baseRouter.post("/products/new", baseController.createProduct);
 
 
 
