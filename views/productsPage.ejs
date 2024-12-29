@@ -2,4 +2,9 @@
 <% if (form) { %>
     <%- include("partials/newForms/newProductForm.ejs") %>
         <% } %>
+<% if (update) { %>
+    <%- include("partials/updateForms/updateProduct.ejs") %>
+        <% } %>
     <%- include("partials/displayExisting/displayProducts.ejs") %>
+
+    <a href="/products/new">new</a>

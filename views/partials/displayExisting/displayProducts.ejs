@@ -10,8 +10,12 @@
             Product: <%= product.product_name%>
                 <br>
                 Brand: <%= product.product_brand%>
-                    <br>
-                    Category: <%= product.product_category%>
+                <br>
+                Category: <%= product.product_category%>
+                <br>
+                <a href="/product/<%= product.product_id %>/update">Update</a>
+                                <%- console.log(product) %>
+
         </li>
         <%}%>
 </ul>

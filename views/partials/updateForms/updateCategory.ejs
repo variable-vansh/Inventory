@@ -1,0 +1,30 @@
+<form action="/categories/:id/update" method="post">
+
+    <input type="text" name="category_id" value="<%= category.id %>" style="display: none;" >
+
+
+    <label for="newCategory">Category</label>
+    <input type="text" name="newCategoryName" id="newCategory" value="<%= category.category_name%>">
+    <label for="newCatProducts">Associated Products</label>
+    <input type="checkbox" name="newCatProducts" value="option1"> Option 1
+    <input type="checkbox" name="newCatProducts" value="option2"> Option 2
+    <input type="checkbox" name="newCatProducts" value="option3"> Option 3
+    <label>
+        <input type="checkbox" name="otherCheckbox" value="other" id="otherOption"> Other
+    </label>
+    <input type="text" name="otherProduct" placeholder="Please specify" style="display: none;" id="otherInput">
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    const otherCheckbox = document.getElementById('otherOption');
+    const otherInput = document.getElementById('otherInput');
+
+    otherCheckbox.addEventListener('change', () => {
+        if (otherCheckbox.checked) {
+            otherInput.style.display = "block";
+        } else {
+            otherInput.style.display = "none";
+        }
+    });
+</script>
