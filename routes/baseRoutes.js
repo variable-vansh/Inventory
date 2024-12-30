@@ -25,4 +25,9 @@ baseRouter.post("/categories/:id/update", baseController.updateCategoryPOST);
 baseRouter.get("/brands/:id/update", baseController.updateBrandsGET);
 baseRouter.post("/brands/:id/update", baseController.updateBrandsPOST);
 
+baseRouter.get("/products/:id/delete", baseController.deleteProductGET)
+baseRouter.get("/categories/:id/delete", baseController.deleteCategoryGET)
+baseRouter.get("/brands/:id/delete", baseController.deleteBrandGET)
+
+
 module.exports = baseRouter;

@@ -101,6 +101,18 @@ async function updateBrand(brand_name, brand_id, newBrandCategory, newBrandProd)
     return await(pool.query('SELECT * FROM brands ORDER BY id'));
 }
 
+async function deleteProduct(id){
+  await pool.query(`DELETE FROM products WHERE id=${id}`)
+}
+
+async function deleteCategory(id){
+  await pool.query(`DELETE FROM categories WHERE id=${id}`)
+}
+
+async function deleteBrand(id){
+  await pool.query(`DELETE FROM brands WHERE id=${id}`)
+}
+
 
 
 module.exports = {
@@ -120,7 +132,11 @@ module.exports = {
     updateCategory,
 
     getBrandFromId,
-    updateBrand
+    updateBrand,
+
+    deleteProduct,
+    deleteCategory,
+    deleteBrand
 };
 
 

@@ -14,8 +14,8 @@
                 Category: <%= product.product_category%>
                 <br>
                 <a href="/product/<%= product.product_id %>/update">Update</a>
-                                <%- console.log(product) %>
 
+                <a href="/products/<%= product.product_id %>/delete">Delete</a>
         </li>
         <%}%>
 </ul>

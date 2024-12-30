@@ -102,6 +102,24 @@ async function updateBrandsPOST(req, res) {
     res.redirect('/brands');
 }
 
+async function deleteProductGET(req, res){
+    let id=req.params.id
+    await (db.deleteProduct(id))
+    res.redirect("/products")
+}
+
+async function deleteCategoryGET(req, res){
+    let id=req.params.id
+    await (db.deleteCategory(id))
+    res.redirect("/categories")
+}
+
+async function deleteBrandGET(req, res){
+    let id=req.params.id
+    await (db.deleteBrand(id))
+    res.redirect("/brands")
+}
+
 module.exports = {
   displayHome,
   displayCategories,
@@ -118,5 +136,8 @@ module.exports = {
   updateCategoryGET,
   updateCategoryPOST,
   updateBrandsGET,
-  updateBrandsPOST
+  updateBrandsPOST,
+  deleteProductGET,
+  deleteCategoryGET,
+  deleteBrandGET
 };
